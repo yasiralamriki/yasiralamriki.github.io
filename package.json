@@ -1,0 +1,15 @@
+{
+  "name": "yasiralamriki.github.io",
+  "version": "1.0.0",
+  "main": "js/quran.js",
+  "scripts": {
+    "test": "live-server"
+  },
+  "author": "yasiralamriki",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "@quranjs/api": "^1.7.1"
+  }
+}
