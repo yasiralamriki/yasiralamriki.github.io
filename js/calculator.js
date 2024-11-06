@@ -1,62 +1,70 @@
 let buttons = document.getElementById("buttons")
 let display = document.getElementById("display")
-let displaybottomtext = document.getElementById("displaybottomtext")
-let displaytoptext = document.getElementById("displaytoptext")
+let displayTopTextElem = document.getElementById("displaytoptext")
+let displayBottomTextElem = document.getElementById("displaybottomtext")
+
+let displayTopText = displayTopTextElem.innerText
+let displayBottomText = displayBottomTextElem.innerText
 
 for (let i = 0; i < buttons.children.length; i++) {
     let element = buttons.children[i]
+    let elementText = element.innerText
 
     element.addEventListener("click", function() {
         // If a number is pressed, add it to the display
-        if (isNaN(element.innerText) == false) {
-            if (displaybottomtext.innerText == "0") {
-                // If the text is 0 then set it to to the button pressed
-                displaybottomtext.innerText = element.innerText
+        if (isNaN(elementText) == false) {
+            if (displayBottomText == "0") {
+                // If the text is 0 then set it to the button pressed
+                displayBottomText = elementText
             } else {
-                if (displaytoptext.innerText.length > 0) {
+                if (displayTopText.length > 0) {
                     // If the top text exists
-                    if (displaytoptext.innerText.split(" ")[0] == displaybottomtext.innerText) {
+                    if (displayTopText.split(" ")[0] == displayBottomText) {
                         // If the top and bottom text are the same then reset
-                        displaybottomtext.innerText = element.innerText
-                    } else if (displaytoptext.innerText.includes("=")) {
+                        displayBottomText = elementText
+                    } else if (displayTopText.includes("=")) {
                         // Reset when a number is pressed after a calculation is finished
-                        displaytoptext.innerText = ""
-                        displaybottomtext.innerText = "0"
+                        displayTopText = ""
+                        displayBottomText = elementText
                     } else {
                         // Otherwise add the number to the bottom text
-                        displaybottomtext.innerText += element.innerText
+                        displayBottomText += elementText
                     }
                 } else {
                     // Add the number to the bottom text
-                    displaybottomtext.innerText += element.innerText
+                    displayBottomText += elementText
                 }
             }
         } else { // If other than a number is pressed
-            if (element.innerText == "C") {
+            if (elementText == "C") {
                 // Clear everything
-                displaytoptext.innerText = ""
-                displaybottomtext.innerText = "0"
-            } else if (element.innerText == "CE") { 
+                displayTopText = ""
+                displayBottomText = "0"
+            } else if (elementText == "CE") { 
                 // Clear the most recent
-                displaybottomtext.innerText = "0"
-            } else if (element.innerText == ".") {
+                displayBottomText = "0"
+            } else if (elementText == ".") {
                 // Add decimal
-                if (!displaybottomtext.innerText.includes(".")) {
-                    displaybottomtext.innerText += "."
+                if (!displayBottomText.includes(".")) {
+                    displayBottomText += "."
                 }
-            } else if (element.innerText == "=") {
+            } else if (elementText == "=") {
                 // Complete equation
-                if (displaytoptext.innerText.length > 0 && displaybottomtext.innerText.length > 0 && !displaytoptext.innerText.includes("=")) {
-                    let result = eval(displaytoptext.innerText + displaybottomtext.innerText) // Calculate the result
-                    displaytoptext.innerText += ` ${displaybottomtext.innerText} =` // Add "=" to the top text
-                    displaybottomtext.innerText = result // Set the bottom text to the result
+                if (displayTopText.length > 0 && displayBottomText.length > 0 && !displayTopText.includes("=")) {
+                    let result = eval(displayTopText + displayBottomText) // Calculate the result
+                    displayTopText += ` ${displayBottomText} =` // Add "=" to the top text
+                    displayBottomText = result.toString() // Set the bottom text to the result
                 }
             } else {
                 // Addition, Subtraction, Multiplication, etc.
-                if (!isNaN(displaybottomtext.innerText)) {
-                    displaytoptext.innerText = `${displaybottomtext.innerText} ${element.innerText}` // Add the symbol to the top text
+                if (!isNaN(displayBottomText)) {
+                    displayTopText = `${displayBottomText} ${elementText}` // Add the symbol to the top text
                 }
             }
         }
+
+        // Update the DOM with the new values
+        displayTopTextElem.innerText = displayTopText
+        displayBottomTextElem.innerText = displayBottomText
     })
 }
