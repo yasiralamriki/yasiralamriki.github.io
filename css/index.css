@@ -10,7 +10,6 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
-    padding-bottom: 64px;
 }
 
 #hero {
@@ -19,47 +18,4 @@ body {
 
 #aboutme {
     padding: 0px 0px 32px 0px;
-}
-
-#projectcards {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 16px;
-    justify-content: center;
-}
-
-#projectcard {
-    width: 350px;
-    height: 350px;
-    border: 1px solid #27272A;
-    background-color: #09090B;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#projectcardimage {
-    width: 200px;
-    height: 200px;
-    padding-bottom: 16px;
-}
-
-#projectcardtext {
-    margin-top: 0px;
-}
-
-.button {
-    background-color: #FAFAFA;
-    color: #18181B;
-    border: 0;
-    border-radius: 6px;
-    padding: 8px 16px 8px 16px;
-    font-family: "Inter", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-weight: 500;
-    text-decoration: none;
 }
