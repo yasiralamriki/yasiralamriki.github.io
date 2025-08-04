@@ -12,5 +12,5 @@ export default defineConfig({
     },
   },
   build: { outDir: 'dist' },
-  base: '/yasiralamriki.github.io/', // Set the base path for GitHub Pages
+  base: '/', // For username.github.io repos, base should be root
 })
