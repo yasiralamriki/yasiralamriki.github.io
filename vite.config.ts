@@ -11,5 +11,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: 'https://yasiralamriki.github.io/', // Set the base path for GitHub Pages
+  base: '/yasiralamriki.github.io/', // Set the base path for GitHub Pages
 })
