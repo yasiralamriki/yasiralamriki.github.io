@@ -40,10 +40,10 @@ function App() {
         {/* Main content with entrance animation */}
         <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           {/* Main heading with gradient text */}
-          <h1 className="text-5xl md:text-7xl font-bold text-center mb-4 bg-gradient-to-r from-red-500 via-orange-500 to-red-600 bg-clip-text text-transparent animate-pulse">
+          <h1 className="text-3xl lg:text-7xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-red-500 via-orange-500 to-red-600 bg-clip-text text-transparent animate-pulse">
             WELCOME TO MY
             <br />
-            <span className="text-6xl md:text-8xl">PORTFOLIO</span>
+            <span className="text-4xl lg:text-8xl md:text-6xl">PORTFOLIO</span>
           </h1>
 
           {/* Subtitle with typewriter effect */}
@@ -87,7 +87,7 @@ function App() {
 
           {/* Progress indicator */}
           <div className="flex flex-col items-center gap-4">
-            <div className="bg-zinc-800/50 backdrop-blur-sm rounded-full px-6 py-3 border border-zinc-700">
+            <div className="bg-zinc-800/50 backdrop-blur-sm rounded-full px-6 py-3 border border-zinc-700 text-center">
               <span className="text-zinc-400 text-sm font-medium">Development Progress</span>
             </div>
             <div className="w-64 bg-zinc-800 rounded-full h-2 overflow-hidden">
