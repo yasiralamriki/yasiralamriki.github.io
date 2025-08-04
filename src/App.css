@@ -1,0 +1,86 @@
+/* App specific styles */
+@import "tailwindcss";
+
+:root {
+  overflow: hidden;
+}
+
+.pattern {
+    width: 100vw;
+    height: 100vh;
+    background-color: #09090b; /* Tailwind zinc-950 */
+    background-image: 
+        linear-gradient(0deg, 
+            transparent 24%, 
+            theme('colors.zinc.800') 25%,
+            theme('colors.zinc.800') 26%, 
+            transparent 27%, 
+            transparent 74%, 
+            theme('colors.zinc.800') 75%,
+            theme('colors.zinc.800') 76%, 
+            transparent 77%, 
+            transparent
+        ),
+        linear-gradient(90deg, 
+            transparent 24%, 
+            theme('colors.zinc.800') 25%,
+            theme('colors.zinc.800') 26%, 
+            transparent 27%, 
+            transparent 74%, 
+            theme('colors.zinc.800') 75%,
+            theme('colors.zinc.800') 76%, 
+            transparent 77%, 
+            transparent
+        );
+    background-size: 55px 55px;
+    animation: patternMove 5s linear infinite;
+}
+
+@keyframes patternMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 55px 55px;
+    }
+}
+
+/* Custom animations */
+@keyframes patternMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 55px 55px;
+    }
+}
+
+/* Responsive text sizing */
+@media (max-width: 768px) {
+    .pattern {
+        background-size: 35px 35px;
+    }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: theme('colors.zinc.900');
+}
+
+::-webkit-scrollbar-thumb {
+    background: theme('colors.purple.600');
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.purple.500');
+}
