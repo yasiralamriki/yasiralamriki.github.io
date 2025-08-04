@@ -69,7 +69,7 @@ function App() {
           {/* Social links with hover animations */}
           <div className="flex gap-6 justify-center mb-8">
             {[
-              { icon: Github, href: 'github.com/yasiralamriki', label: 'GitHub' },
+              { icon: Github, href: 'https://github.com/yasiralamriki', label: 'GitHub' },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
